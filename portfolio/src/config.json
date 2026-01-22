@@ -1,0 +1,32 @@
+{
+  "name": "John Doe",
+  "title": "Full Stack Developer & Creative Designer",
+  "tagline": "Crafting beautiful, functional digital experiences with modern technologies.",
+  "email": "john@example.com",
+  "location": "San Francisco, CA",
+  "phone": "+1 (555) 123-4567",
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername",
+    "portfolio": "https://yourportfolio.com"
+  },
+  "colors": {
+    "primary": "#FF69B4",
+    "primaryLight": "#FFB6D9",
+    "primaryDark": "#E85B9E",
+    "secondary": "#F5E6E8",
+    "textDark": "#2D3748",
+    "textLight": "#718096",
+    "bgWhite": "#FFFFFF",
+    "bgLight": "#F8F9FA"
+  },
+  "aboutSummary": "I'm a full-stack developer with a passion for creating beautiful, functional digital experiences. With 5+ years of experience in web development, I specialize in building responsive applications that solve real-world problems.",
+  "skills": {
+    "frontend": ["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Redux", "Material-UI"],
+    "backend": ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL"],
+    "tools": ["Git", "Docker", "AWS", "CI/CD", "Webpack", "GitHub"],
+    "design": ["Figma", "UI/UX Design", "Responsive Design", "Accessibility", "Prototyping"]
+  },
+  "responseTime": "Usually within 24 hours"
+}

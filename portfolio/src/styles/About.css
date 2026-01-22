@@ -1,0 +1,73 @@
+/* About Section Styles */
+.about {
+  background-color: var(--bg-light);
+}
+
+.about h2 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.about-text {
+  line-height: 1.9;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.about-text p:first-child::first-letter {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.about-highlights {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  padding: 1.5rem;
+  background: var(--bg-white);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.highlight-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.highlight-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.highlight-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+}
