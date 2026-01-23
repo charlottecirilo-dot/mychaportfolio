@@ -29,17 +29,17 @@ const Experience = () => {
   const education = [
     {
       id: 1,
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'University of Tech',
-      year: '2018',
+      degree: 'Bachelor of Science in Information Technology',
+      school: 'Adamson University',
+      year: '2024',
       details: 'GPA: 3.8/4.0 | Dean\'s List'
     },
     {
       id: 2,
-      degree: 'Full Stack Web Development Bootcamp',
-      school: 'Code Academy',
-      year: '2018',
-      details: 'Intensive 12-week program focusing on modern web technologies'
+      degree: 'Bachelor of Science in Information Technology',
+      school: 'Father Saturnino Urios University',
+      year: '2025-Current',
+      details: '3rd year, Irregular'
     }
   ];
 

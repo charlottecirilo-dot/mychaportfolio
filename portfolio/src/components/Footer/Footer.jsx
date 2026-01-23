@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h4>John Doe</h4>
+            <h4>Charlotte Cirilo</h4>
             <p>Full Stack Developer & Creative Designer</p>
           </div>
 
@@ -36,8 +36,8 @@ const Footer = () => {
         <div className="footer-divider"></div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} John Doe. All rights reserved.</p>
-          <p className="footer-credit">Built with React & ❤️</p>
+          <p>&copy; {currentYear} Charlotte Cirilo. All rights reserved.</p>
+          <p className="footer-credit">2026</p>
         </div>
       </div>
     </footer>

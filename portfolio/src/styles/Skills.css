@@ -16,7 +16,7 @@
 
 .skill-category {
   padding: 2rem;
-  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  background: #FFB6C1;
   border-radius: 8px;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
