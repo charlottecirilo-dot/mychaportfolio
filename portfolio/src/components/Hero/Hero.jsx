@@ -6,6 +6,9 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="container">
         <div className="hero-content">
+          <div className="hero-image">
+            <img src="CHA.jpg"/>
+          </div>
           <h1 className="fade-in">Charlotte Cirilo</h1>
           <p className="hero-role slide-in-up">Full Stack Developer & Creative Designer</p>
           <p className="hero-tagline slide-in-up">

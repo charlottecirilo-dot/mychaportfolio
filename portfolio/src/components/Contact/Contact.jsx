@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import '../../styles/Contact.css';
+
+// 🔐 EMAILJS KEYS (HARDCODED – WORKING)
+const SERVICE_ID = 'service_egvzgzz';
+const TEMPLATE_ID = 'template_r4o4tao';
+const PUBLIC_KEY = 'CQCzkKj00ozw8ps7E';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,47 +15,50 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+    setFormData(prev => ({
+      ...prev,
       [name]: value
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send to backend)
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    
-    // Hide message after 3 seconds
-    setTimeout(() => setSubmitted(false), 3000);
-  };
+    setError('');
 
-  const socialLinks = [
-    { name: 'GitHub', url: '#', icon: '🔗' },
-    { name: 'LinkedIn', url: '#', icon: '🔗' },
-    { name: 'Twitter', url: '#', icon: '🔗' },
-    { name: 'Email', url: 'mailto:john@example.com', icon: '📧' }
-  ];
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    };
+
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 3000);
+      })
+      .catch((err) => {
+        console.error('EmailJS Error:', err);
+        setError('❌ Failed to send message. Please try again.');
+      });
+  };
 
   return (
     <section className="contact" id="contact">
       <div className="container">
         <h2>Get In Touch</h2>
         <div className="divider"></div>
-        
+
         <div className="contact-wrapper">
+          {/* LEFT: FORM */}
           <div className="contact-form-section">
             <h3>Send me a message</h3>
-            
+
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
@@ -87,7 +96,7 @@ const Contact = () => {
                   required
                   placeholder="Your message here..."
                   rows="6"
-                ></textarea>
+                />
               </div>
 
               <button type="submit" className="btn btn-primary submit-btn">
@@ -99,37 +108,32 @@ const Contact = () => {
                   ✓ Thank you! Your message has been sent successfully.
                 </div>
               )}
+
+              {error && (
+                <div className="error-message">
+                  {error}
+                </div>
+              )}
             </form>
           </div>
 
+          {/* RIGHT: INFO */}
           <div className="contact-info">
             <h3>Other ways to reach me</h3>
-            
-            <div className="social-links">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  className="social-link"
-                  title={link.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="social-icon">{link.icon}</span>
-                  <span className="social-name">{link.name}</span>
-                </a>
-              ))}
-            </div>
 
             <div className="contact-details">
               <div className="detail-item">
                 <h4>Email</h4>
-                <p><a href="mailto:john@example.com">john@example.com</a></p>
+                <p>
+                  <a href="mailto:charlotte.cirilo@urios.edu.ph">
+                    charlotte.cirilo@urios.edu.ph
+                  </a>
+                </p>
               </div>
-              
+
               <div className="detail-item">
                 <h4>Location</h4>
-                <p>San Francisco, CA</p>
+                <p>Regatta East Village, Ampayon, Butuan City</p>
               </div>
 
               <div className="detail-item">
